@@ -1,0 +1,1 @@
+﻿I could write an interface to grab the html of the job posting and then just render it using razor.. but for now I will copy paste so i can wrtie my own responses without making them super structured in the database or whatever

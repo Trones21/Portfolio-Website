@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyStuff", "MyStuff\MyStuff.csproj", "{20080169-C394-49B6-AAE6-9C73447CF723}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyStuffTests", "MyStuffTests\MyStuffTests.csproj", "{D5E4CE86-89BF-4ECF-A305-34312F81F689}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F6BE8C0-2F8E-453B-A531-216E3884A093}"
+	ProjectSection(SolutionItems) = preProject
+		Startup Checks (Manual).txt = Startup Checks (Manual).txt
+		ToDo.txt = ToDo.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20080169-C394-49B6-AAE6-9C73447CF723}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20080169-C394-49B6-AAE6-9C73447CF723}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20080169-C394-49B6-AAE6-9C73447CF723}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20080169-C394-49B6-AAE6-9C73447CF723}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E4CE86-89BF-4ECF-A305-34312F81F689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E4CE86-89BF-4ECF-A305-34312F81F689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E4CE86-89BF-4ECF-A305-34312F81F689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E4CE86-89BF-4ECF-A305-34312F81F689}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3691CA7B-5F14-4EB3-8A3A-E162F0D76D56}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tronesde.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MyStuff\\MyStuff.csproj
+		SccProjectName1 = MyStuff
+		SccLocalPath1 = MyStuff
+		SccProjectUniqueName2 = MyStuffTests\\MyStuffTests.csproj
+		SccProjectName2 = MyStuffTests
+		SccLocalPath2 = MyStuffTests
+	EndGlobalSection
+EndGlobal

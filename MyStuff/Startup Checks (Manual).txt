@@ -1,0 +1,3 @@
+We need to see if the database is hooked up:
+-Check MyStuffdbContext for Instructions
+-Check chosen database for data, if empty, then run ExternalInterfaces Tests

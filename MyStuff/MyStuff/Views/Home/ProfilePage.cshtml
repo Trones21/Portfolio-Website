@@ -1,0 +1,56 @@
+﻿@model MyStuff.ViewModels.HomeProfilePageViewModel
+@{
+    Layout = "~/Views/Shared/_PublicLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<body>
+    <div class="container">
+   @*<iframe src="https://www.youtube.com/embed/Q0GpVxZoi28?ecver=1&amp;iv_load_policy=1&amp;yt:stretch=16:9&amp;autohide=1&amp;color=red&amp;width=560&amp;width=560" width="560" height="315" allowtransparency="true" frameborder="0"></iframe>*@
+        <div class="card-panel teal lighten-2">My Favorite Books</div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="row">
+
+            @foreach (var book in Model.favoriteBooks)
+        {
+
+            <div class="mySlides col s4 m3 l2">
+                <div class="card">
+                    <div class="card-image blue-grey darken-1">
+                        <div class="container">
+                            <img class="responsive-img" src="@book.imageLink">
+                        </div>
+                        <div class="card-content">
+                            <p class="flow-text">
+                                @book.Title
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    }
+        </div>
+
+        <div>My Favorite (Most Used) Software</div>
+        <table>
+            @foreach (var software in Model.softwares)
+        {
+            <tr>
+                <td class="white-text">@software.Name</td>
+                <td>@software.Description</td>
+            </tr>
+    }
+        </table>
+
+        <div>My Favorite Podcasts</div>
+        <div>My Favorite Business / Industry Theories</div>
+    </div>
+</body>
+
+    </html>
+
+<script>function execute_YTvideo() { return youtube.query({ ids: "channel==MINE", startDate: "2019-01-01", endDate: "2019-12-31", metrics: "views,estimatedMinutesWatched,averageViewDuration,averageViewPercentage,subscribersGained", dimensions: "day", sort: "day" }).then(function (e) { }, function (e) { console.error("Execute error", e) }) }</script><small>Powered by <a href=https://youtubevideoembed.com />Embed YouTube Video</a></small>
+<script type="text/javascript" src="~/custom/Slider.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+

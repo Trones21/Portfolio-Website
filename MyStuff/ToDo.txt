@@ -1,0 +1,6 @@
+Actually work on Webpage lol!
+
+Fix Goodreads Interface so that it inserts and updates properly.
+
+Test - Create Tableau Public Viz that connects to Google Sheets -> SQl Server
+Embed Viz Into Site

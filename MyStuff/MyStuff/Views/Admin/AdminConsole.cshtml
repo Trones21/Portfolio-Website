@@ -1,0 +1,46 @@
+﻿@using MyStuff.Models
+@model Project
+
+<div class="container">
+        <h1>Create Project</h1>
+        <p>Note: Need to update form to work with Materialize -- https://materializecss.com/select.html#initialization</p>
+        <form class="col s8" method="post">
+
+            <div class="row">
+                <p>Title:</p>
+                <input asp-for="Title" width="100" />
+            </div>
+            <div class="row">
+                <p>Work or Side Project:</p>
+                <select asp-for="WorkorSideProject" asp-items="@Html.GetEnumSelectList<WorkorSideProject>()"></select>
+                <p>Progress Status:</p>
+                <select asp-for="ProgressStatus" asp-items="@Html.GetEnumSelectList<ProgressStatus>()"></select>
+                <p>Project Size:</p>
+                <select asp-for="Size" asp-items="@Html.GetEnumSelectList<Size>()"></select>
+            </div>
+            <div class="row">
+                <p>Image URI:</p>
+                <input asp-for="ImgURI" />
+            </div>
+            <div class="row">
+                <p>Github Link:</p>
+                <input type="url" asp-for="GithubLink" />
+            </div>
+            <div class="row">
+                <p>Short Description:</p>
+                <textarea asp-for="ShortDescription" cols="100" rows="10">
+                </textarea>
+            </div>
+            <div class="row">
+                <p>Full Details:</p>
+                <textarea asp-for="FullDetails" cols="100" rows="10">
+                </textarea>
+            </div>
+            <div class="row">
+                <input type="submit" name="Create" value="Create" />
+            </div>
+        </form>
+    </div>
+<script></script>
+
+
