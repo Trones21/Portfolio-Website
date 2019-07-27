@@ -16,36 +16,140 @@
 </div>
 <div class="container white-text">
     <h3>@Model.Title</h3>
-    <div class="row">
-        <p>Type: @Model.WorkorSideProject</p>
-        <p>Status: @Model.ProgressStatus</p>
-        <p>Size: @Model.Size </p>
-    </div>
-    <div class="row">
-        <h5>Summary:</h5>
-        <p>@Html.Raw(Model.ShortDescription)</p>
-        @{ if (Uri.IsWellFormedUriString(Model.GithubLink, UriKind.Absolute))
-            {
-                <a href="@Model.GithubLink" target="_blank">View Code on GitHub</a>
-            }
-            else
-            {
-                if (Model.GithubLink != null)
+
+    <section style="padding-top:25px">
+        <div class="row">
+            <div class="col s2 left">
+                <span class="right">Type:</span>
+            </div>
+                @{
+                    switch (Model.WorkorSideProject)
+                    {
+                        case WorkorSideProject.SideProject:
+                            <span class="new badge blue left" data-badge-caption="Side Project" style="font-weight:bold"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Work"></span>
+                            break;
+                        case WorkorSideProject.Work:
+                            <span class="new badge grey darken-1 left" data-badge-caption="Side Project"></span>
+                            <span class="new badge purple" data-badge-caption="Work" style="font-weight:bold"></span>
+                            break;
+                    }
+                }
+
+           
+
+        </div>
+        <div class="row">
+            <div class="col s2 left">
+                <span class="right">Status:</span>
+            </div>
+                @{
+                    switch (Model.ProgressStatus)
+                    {
+                        case ProgressStatus.Idea:
+                            <span class="new badge yellow darken-1 left black-text" data-badge-caption="Idea" style="font-weight:bold"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Inactive"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="In Progress"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Complete"></span>
+
+                            break;
+                        case ProgressStatus.Inactive:
+                            <span class="new badge grey darken-1 left" data-badge-caption="Idea"></span>
+                            <span class="new badge grey darken-4 left" data-badge-caption="Inactive" style="font-weight:bold"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="In Progress"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Complete"></span>
+
+                            break;
+                        case ProgressStatus.InProgress:
+                            <span class="new badge grey darken-1 left" data-badge-caption="Idea"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Inactive"></span>
+                            <span class="new badge light-green darken-1 left" data-badge-caption="In Progress" style="font-weight:bold"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Complete"></span>
+
+
+                            break;
+                        case ProgressStatus.Complete:
+                            <span class="new badge grey darken-1 left" data-badge-caption="Idea"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Inactive"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="In Progress"></span>
+                            <span class="new badge green darken-1 left" data-badge-caption="Complete" style="font-weight:bold"></span>
+                            break;
+                    }
+
+
+                }
+            
+        </div>
+        <div class="row">
+            <div class="col s2 left">
+                <span class="right">Size:</span>
+                </div>
+
+                @{switch (Model.Size)
+                    {
+                        case Size.Huge:
+                            <span class="new badge teal darken-2 left" data-badge-caption="Huge" style="font-weight:bold"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Large"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Medium"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Small"></span>
+                            break;
+                        case Size.Large:
+                            <span class="new badge grey darken-1 left" data-badge-caption="Small"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Medium"></span>
+                            <span class="new badge teal darken-2 left" data-badge-caption="Large" style="font-weight:bold"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Huge"></span>
+
+                            break;
+                        case Size.Medium:
+                            <span class="new badge grey darken-1 left" data-badge-caption="Huge"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Large"></span>
+                            <span class="new badge teal darken-2 left" data-badge-caption="Medium" style="font-weight:bold"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Small"></span>
+                            break;
+                        case Size.Small:
+                            <span class="new badge grey darken-1 left " data-badge-caption="Huge"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Large"></span>
+                            <span class="new badge grey darken-1 left" data-badge-caption="Medium"></span>
+                            <span class="new badge teal darken-2 left" data-badge-caption="Small" style="font-weight:bold"></span>
+                            break;
+                    }
+                }
+            
+        </div>
+
+    </section>
+    <div class="section">
+
+            <h5>Summary</h5>
+            <div class="divider"></div>
+            <p>@Html.Raw(Model.ShortDescription)</p>
+            @{ if (Uri.IsWellFormedUriString(Model.GithubLink, UriKind.Absolute))
                 {
-                    <p>Invalid Link : @Model.GithubLink</p>
+                    <a href="@Model.GithubLink" target="_blank">View Code on GitHub</a>
+                }
+                else
+                {
+                    if (Model.GithubLink != null)
+                    {
+                        <p>Invalid Link : @Model.GithubLink</p>
+                    }
                 }
             }
-        }
-        
-        <h5>Full Details:</h5>
-        <span>@Html.Raw(Model.FullDetails)</span>
+
+    </div>
+    <div class="section">
+
+            <h5>Full Details</h5>
+            <div class="divider"></div>
+            <span>@Html.Raw(Model.FullDetails)</span>
+
     </div>
 </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
-        $(document).ready(function ()
-        {
+        $(document).ready(function () {
             $('.tooltipped').tooltip()
         }
         );

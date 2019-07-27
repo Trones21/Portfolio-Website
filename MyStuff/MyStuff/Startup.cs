@@ -26,8 +26,9 @@ namespace MyStuff
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddAuthentication();
             services.AddMvc();
-            services.AddDbContext<MyStuffdbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("DEV_PersonalLaptop")));
+            services.AddDbContext<MyStuffdbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("Azure")));
             services.AddScoped<ISoftwareData, InMemorySoftwareData>();
             services.AddScoped<IBookData, SqlBookData>();
             services.AddScoped<IProjectData, SqlProjectData>();
@@ -36,6 +37,7 @@ namespace MyStuff
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            //app.UseAuthentication();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -50,10 +52,10 @@ namespace MyStuff
             //app.UseMvc();
             app.UseMvcWithDefaultRoute();
 
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Fall through");
-            //});
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync("Fall through");
+            });
         }
     }
 }

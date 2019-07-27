@@ -32,12 +32,12 @@ namespace MyStuff.Data
         {
             optionsBuilder.UseSqlServer(
                 //Azure
-                //"Server=tcp:trones21pkc6.database.windows.net, 1433; Initial Catalog = MyStuff; Persist Security Info = False; User ID=Trones; Password=C6aswlechi4dr; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"
+                "Server=tcp:trones21pkc6.database.windows.net, 1433; Initial Catalog = MyStuff; Persist Security Info = False; User ID=Trones; Password=C6aswlechi4dr; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"
                 //WorkLaptop
                 //"Server = (localdb)\\MSSQLLocalDB; Database=MyStuff; Trusted_Connection = True;"
                 //"Server = (localdb)\\ProjectsV13; Database=MyStuffV13; Trusted_Connection = True;"
                 //PersonalLaptop
-                "Data Source=DESKTOP-TTI6PV9; Database=MyStuff; Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+                //"Data Source=DESKTOP-TTI6PV9; Database=MyStuff; Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
                 )
                 ;
         }
