@@ -28,7 +28,7 @@ namespace MyStuff
         {
             //services.AddAuthentication();
             services.AddMvc();
-            services.AddDbContext<MyStuffdbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("Azure")));
+            services.AddDbContext<MyStuffdbContext>(options => options.UseSqlServer(_configuration.GetConnectionString("GoDaddy")));
             services.AddScoped<ISoftwareData, InMemorySoftwareData>();
             services.AddScoped<IBookData, SqlBookData>();
             services.AddScoped<IProjectData, SqlProjectData>();

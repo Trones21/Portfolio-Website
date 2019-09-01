@@ -13,6 +13,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\img\**" />
+    <Content Remove="wwwroot\img\**" />
+    <EmbeddedResource Remove="wwwroot\img\**" />
+    <None Remove="wwwroot\img\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Migrations\20190721165752_ProjectsandTagsClassesAdded.cs" />
     <Compile Remove="Migrations\20190721165752_ProjectsandTagsClassesAdded.Designer.cs" />
     <Compile Remove="Migrations\20190721181450_ProjectsAndTags.cs" />

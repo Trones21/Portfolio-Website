@@ -31,8 +31,10 @@ namespace MyStuff.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(
+                //GoDaddy 
+                "Server=198.71.227.2; Initial Catalog = MyStuff; Persist Security Info = False; User ID=Trones; Password=C6aswlechi4dr; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = True; Connection Timeout = 30;"
                 //Azure
-                "Server=tcp:trones21pkc6.database.windows.net, 1433; Initial Catalog = MyStuff; Persist Security Info = False; User ID=Trones; Password=C6aswlechi4dr; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"
+                //"Server=tcp:trones21pkc6.database.windows.net, 1433; Initial Catalog = MyStuff; Persist Security Info = False; User ID=Trones; Password=C6aswlechi4dr; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"
                 //WorkLaptop
                 //"Server = (localdb)\\MSSQLLocalDB; Database=MyStuff; Trusted_Connection = True;"
                 //"Server = (localdb)\\ProjectsV13; Database=MyStuffV13; Trusted_Connection = True;"
